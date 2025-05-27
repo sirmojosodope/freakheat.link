@@ -11,7 +11,7 @@ const merch = [
   },
   {
     label: 'Music Has An Interesting Power Bumper Sticker',
-    url: 'https://freakheatwaves.bandcamp.com/album/music-has-an-interesting-power',
+    url: 'https://freakheatwaves.bandcamp.com/merch/music-has-an-interesting-power-bumper-sticker',
   },
 ]
 
