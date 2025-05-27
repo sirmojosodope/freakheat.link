@@ -1,0 +1,6 @@
+/* styles.css — placeholder for scoped overrides, optional */
+
+h1, p, button {
+  z-index: 1;
+  position: relative;
+}
