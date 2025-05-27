@@ -39,4 +39,5 @@ const App = () => {
               view === 'live' ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            {view === 'live' && <Live onBack={() => setView('ho
+            {view === 'live' && <Live onBack={() => setView('home')} />}
+
