@@ -10,34 +10,25 @@ type View = 'home' | 'merch' | 'live'
 const App = () => {
   const [view, setView] = useState<View>('home')
 
+  const renderView = () => {
+    switch (view) {
+      case 'merch':
+        return <Merch onBack={() => setView('home')} />
+      case 'live':
+        return <Live onBack={() => setView('home')} />
+      default:
+        return <Landing onNavigate={setView} />
+    }
+  }
+
   return (
     <>
       <BackgroundVideo />
       <div className="absolute inset-0 z-10 pointer-events-none">
-        <div className="pointer-events-auto relative w-full h-full">
-          {/* Home */}
-          <div
-            className={`transition-opacity duration-500 absolute inset-0 ${
-              view === 'home' ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            {view === 'home' && <Landing onNavigate={setView} />}
-          </div>
+        <div className="pointer-events-auto">{renderView()}</div>
+      </div>
+    </>
+  )
+}
 
-          {/* Merch */}
-          <div
-            className={`transition-opacity duration-500 absolute inset-0 ${
-              view === 'merch' ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            {view === 'merch' && <Merch onBack={() => setView('home')} />}
-          </div>
-
-          {/* Live */}
-          <div
-            className={`transition-opacity duration-500 absolute inset-0 ${
-              view === 'live' ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            {view === 'live' && <Live onBack={() => setView('home')} />}
-
+export default App
