@@ -3,10 +3,10 @@ import BackgroundVideo from './Backgroundvideo'
 import '../styles/global.css'
 
 const channels = [
-  { label: '📺 Channel 01 — Bandcamp', url: 'https://freakheatwaves.bandcamp.com' },
-  { label: '📼 Channel 02 — YouTube', url: 'https://youtu.be/TrgAAZvx2As?si=eZ7HVP2P8awrbS_P' },
-  { label: '🛰 Channel 03 — Spotify', url: 'https://open.spotify.com/artist/07Owzhi4WDxi731LiJ2tG0?si=AlMSgffKQHOX5SiD_9yyFg' },
-  { label: '📡 Channel 04 — Instagram', url: 'https://www.instagram.com/freakheatwaves' },
+  { label: 'Bandcamp', url: 'https://freakheatwaves.bandcamp.com' },
+  { label: 'YouTube', url: 'https://youtu.be/TrgAAZvx2As?si=eZ7HVP2P8awrbS_P' },
+  { label: 'Spotify', url: 'https://open.spotify.com/artist/07Owzhi4WDxi731LiJ2tG0?si=AlMSgffKQHOX5SiD_9yyFg' },
+  { label: 'Instagram', url: 'https://www.instagram.com/freakheatwaves' },
   
 ]
 

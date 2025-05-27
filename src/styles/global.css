@@ -167,3 +167,7 @@ video {
 .channel-float a:hover {
   text-shadow: 0 0 2px #fff;
 }
+.channel-float a {
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+}
