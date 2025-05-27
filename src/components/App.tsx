@@ -1,5 +1,5 @@
 import React from 'react'
-import BackgroundVideo from './BackgroundVideo'
+import BackgroundVideo from './Backgroundvideo'
 import '../styles/global.css'
 
 const channels = [
