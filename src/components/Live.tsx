@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { motion } from 'framer-motion'
 
 interface Props {
   onBack: () => void
@@ -25,35 +26,45 @@ const previousSightings = [
   { label: 'victoria — lucky bar', url: 'https://www.showpass.com/freakheatwaves2/' },
 ]
 
-const Live = ({ onBack }: Props) => {
-  const [mode] = useState<'previous'>('previous') // for future toggling use
+const container = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+}
 
+const item = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0 },
+}
+
+const Live = ({ onBack }: Props) => {
   return (
-    <div className="channel-float text-white">
+    <div className="channel-float text-white relative">
       <h2 className="mb-4 opacity-60 text-sm tracking-wide">previous sightings</h2>
-      <ul className="space-y-1 text-sm tracking-wider leading-relaxed opacity-80">
+      
+      <motion.ul
+        className="space-y-2 text-sm tracking-wider leading-relaxed opacity-80"
+        initial="hidden"
+        animate="visible"
+        variants={container}
+      >
         {previousSightings.map((show, i) => (
-          <li key={i}>
+          <motion.li key={i} variants={item}>
             <a
               href={show.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-glow transition"
+              className="blur-[0.5px] hover:blur-0 hover:text-glow transition duration-300"
             >
               • {show.label}
             </a>
-          </li>
+          </motion.li>
         ))}
-      </ul>
-
-      {/* 
-      // ——— Activate when next tour drops ———
-      <h2 className="mb-4 mt-10 opacity-60 text-sm tracking-wide">next transmissions</h2>
-      <ul className="space-y-1 text-sm tracking-wider leading-relaxed opacity-90">
-        <li>• tbd — city, venue</li>
-        <li>• tbd — city, venue</li>
-      </ul>
-      */}
+      </motion.ul>
 
       <div className="mt-8">
         <a className="cursor-pointer text-glow" onClick={onBack}>

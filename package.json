@@ -5,12 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node --no-warnings ./node_modules/vite/bin/vite.js build"
-,
+    "build": "node --no-warnings ./node_modules/vite/bin/vite.js build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "framer-motion": "^12.15.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
