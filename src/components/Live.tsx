@@ -45,7 +45,7 @@ const Live = ({ onBack }: Props) => {
   return (
     <div className="channel-float text-white relative">
       <h2 className="mb-4 opacity-60 text-sm tracking-wide">previous sightings</h2>
-      
+
       <motion.ul
         className="space-y-2 text-sm tracking-wider leading-relaxed opacity-80"
         initial="hidden"
@@ -53,14 +53,18 @@ const Live = ({ onBack }: Props) => {
         variants={container}
       >
         {previousSightings.map((show, i) => (
-          <motion.li key={i} variants={item}>
+          <motion.li
+            key={i}
+            variants={item}
+            className="relative pl-4 before:content-['•'] before:absolute before:left-0 before:top-0.5 before:text-white before:opacity-40"
+          >
             <a
               href={show.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="blur-[0.5px] hover:blur-0 hover:text-glow transition duration-300"
+              className="hover:text-glow hover:blur-0 blur-[0.5px] transition duration-300"
             >
-              • {show.label}
+              {show.label}
             </a>
           </motion.li>
         ))}
